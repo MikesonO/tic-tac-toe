@@ -4,6 +4,7 @@
   --color2: #222831;
   --color3: #30475E;
   --color4: #F05454;
+  --color4-darker: #C13838;
   --color4-hightlight: #F0545466;
   --player-height: 400px;
   --player-width: 300px;
@@ -59,7 +60,9 @@ header h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1.5rem;
 }
+
 
 .players {
   display: flex;
@@ -186,4 +189,24 @@ header h1 {
   outline: 2.5px solid var(--color4);
 }
 
+.start-btn{
+  font-family: 'Permanent Marker', cursive;
+  padding: .1rem 1.5rem .2rem 1.5rem;
+  font-size: 2rem;
+  border: none;
+  background-color: var(--color4);
+  color: var(--color1);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.start-btn:hover{
+  background-color: var(--color4-darker);
+}
+
+.start-btn:active{
+  scale: 0.95;
+  transition: .05s;
+}
 /* ID SELECTORS */
