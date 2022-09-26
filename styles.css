@@ -144,6 +144,8 @@ header h1 {
   position: absolute;
   inset: 0;
   opacity: 0;
+  transition: 200ms opacity ease-in-out;
+  transition-delay: 200ms;
 }
 
 .slide>img {
@@ -155,11 +157,13 @@ header h1 {
   background-color: var(--color3);
   box-shadow: 0px 0px 10px 1px var(--color2);
   transform: translateX(-50%) translateY(-50%);
+ 
 
 }
 
 .slide[data-active] {
   opacity: 1;
+  transition-delay: 0ms;
 }
 
 .player-name{
