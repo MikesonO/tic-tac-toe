@@ -1,4 +1,10 @@
-/* COLOR VARIABLES */
+/* VARIABLES */
+:root{
+  --color1: #E8E8E8;
+  --color2: #222831;
+  --player-height: 400px;
+  --player-width: 300px;
+}
 
 /* ELEMENT SELECTORS */
 *{
@@ -11,10 +17,81 @@ body{
   display: grid;
   height: 100vh;
   grid-template-rows: auto 1fr auto;
+  font-family: 'Permanent Marker', cursive;
+}
+
+header{
+  width: 100vw;
+  text-align: center;
+  color: var(--color1);
+  background-color: var(--color2);
+}
+
+main{
+  background-color: var(--color1);
+}
+
+footer{
+  background-color: var(--color2);
+  padding: 1rem;
+}
+
+header h1{
+  font-size: 3.5rem;
 }
 
 
 /* CLASS SELECTOR */
 
+.title-screen{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.player-selection{
+  background-color: var(--color1);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.players{
+  display: flex;
+  gap: 5rem;
+  width: 80vw;
+  justify-content:space-around;
+  margin-top: 2rem;
+}
+
+
+.player1,
+.player2{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 20px;
+  height: var(--player-height);
+  width: var(--player-width);
+  background-color: var(--color1);
+  border: .5rem solid var(--color2);
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px 1px var(--color2);
+}
+
+
+.player-top{
+  width: 100%;
+  color: var(--color1);
+  background-color: var(--color2);
+  text-align: center;
+  padding-bottom: .5rem;
+}
+
+.player-avatar{
+  height: 100%;
+}
 
 /* ID SELECTORS */
