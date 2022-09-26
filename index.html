@@ -28,16 +28,49 @@
         <div class="players">
           <div class="player1">
             <div class="player-top">
-            <h2>Player 1</h2>
+              <h2>Player 1</h2>
+            </div>
+            <div class="player-avatar" data-avatars>
+              <button class="avatar-select-btn prev" data-avatarSwitch-button="prev"><i
+                  class="fa-solid fa-arrow-left"></i></button>
+              <button class="avatar-select-btn next" data-avatarSwitch-button="next"><i
+                  class="fa-solid fa-arrow-right"></i></button>
+              <ul data-slides>
+                <li class="slide" data-active>
+                  <img src="./images/hero1.png" alt="Hero #1">
+                </li>
+                <li class="slide">
+                  <img src="./images/hero2.png" alt="Hero #2">
+                </li>
+                <li class="slide">
+                  <img src="./images/hero3.png" alt="Hero #3">
+                </li>
+                <li class="slide">
+                  <img src="./images/hero4.png" alt="Hero #4">
+                </li>
+                <li class="slide">
+                  <img src="./images/hero5.png" alt="Hero #5">
+                </li>
+                <li class="slide">
+                  <img src="./images/hero6.png" alt="Hero #6">
+                </li>
+              </ul>
+            </div>
+            <div class="player-name">
+              <input type="text" id="player1-name" max-length="12" placeholder="Player 1" />
+            </div>
+          </div>
+          <div class="player2">
+            <div class="player-top">
+              <h2>Player 2</h2>
           </div>
           <div class="player-avatar" data-avatars>
-            <button class="avatar-select-btn prev" data-avatarSwitch-button="prev"><i class="fa-solid fa-arrow-left"></i></button>
-          <button class="avatar-select-btn next" data-avatarSwitch-button="next"><i class="fa-solid fa-arrow-right"></i></button>
+            <button class="avatar-select-btn prev" data-avatarSwitch-button="prev"><i
+                class="fa-solid fa-arrow-left"></i></button>
+            <button class="avatar-select-btn next" data-avatarSwitch-button="next"><i
+                class="fa-solid fa-arrow-right"></i></button>
             <ul data-slides>
               <li class="slide" data-active>
-                <img src="./images/hero1.png" alt="Hero #1">
-              </li>
-              <li class="slide">
                 <img src="./images/hero2.png" alt="Hero #2">
               </li>
               <li class="slide">
@@ -52,23 +85,19 @@
               <li class="slide">
                 <img src="./images/hero6.png" alt="Hero #6">
               </li>
+              <li class="slide">
+                <img src="./images/hero1.png" alt="Hero 1">
+              </li>
             </ul>
           </div>
           <div class="player-name">
-            <input type="text" id="player1-name" max-length="12" placeholder="Player 1"/>
-          </div>
-          </div>
-          <div class="player2">
-            <div class="player-top">
-              <h2>Player 2</h2>
-            </div>
-            <div class="player-avatar">
-  
-            </div>
-
+            <input type="text" id="player2-name" max-length="12" placeholder="Player 2"/>
           </div>
         </div>
+
       </div>
+    </div>
+    </div>
     </div>
     <!-- GAMEBOARD -->
     <div class="gameboard" id="gameboard">
