@@ -15,8 +15,8 @@ return {
 const titlePage = (()=>{
 
   //Avatar Selection (Arrow Buttons)
-  const buttons = document.querySelectorAll("[data-avatarSwitch-button]");
-  buttons.forEach(button =>{
+  const switchButtons = document.querySelectorAll("[data-avatarSwitch-button]");
+  switchButtons.forEach(button =>{
     button.addEventListener("click", () =>{
       const offset = button.dataset.avatarswitchButton == "next" ? 1 : -1;
       const slides = button.closest("[data-avatars]").querySelector("[data-slides]")
@@ -28,9 +28,19 @@ const titlePage = (()=>{
   
       slides.children[newIndex].dataset.active = true
       delete activeSlide.dataset.active
+
+      const selectedPlayer1Avatar = document.querySelector(".player1 [data-active] img").getAttribute("src");
+      const selectedPlayer2Avatar = document.querySelector(".player2 [data-active] img").getAttribute("src");
+      let player1Avatar = document.querySelector(".player1-avatar");
+      let player2Avatar = document.querySelector(".player2-avatar");
+      player1Avatar.src = selectedPlayer1Avatar;
+      player2Avatar.src = selectedPlayer2Avatar;
     })
   })
 
+  
+
+  //Player Name Input
   const playerOneInput = document.querySelector("#p1-name");
   playerOneInput.addEventListener("change", () => {
       playerOneName.textContent += playerOneInput.value;
