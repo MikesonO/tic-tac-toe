@@ -47,7 +47,7 @@ header h1 {
 
 /* CLASS SELECTOR */
 
-.title-screen {
+.title-page {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -189,7 +189,8 @@ header h1 {
   outline: 2.5px solid var(--color4);
 }
 
-.start-btn{
+/* ID SELECTORS */
+#start-btn{
   font-family: 'Permanent Marker', cursive;
   padding: .1rem 1.5rem .2rem 1.5rem;
   font-size: 2rem;
@@ -201,12 +202,11 @@ header h1 {
   transition: .5s;
 }
 
-.start-btn:hover{
+#start-btn:hover{
   background-color: var(--color4-darker);
 }
 
-.start-btn:active{
+#start-btn:active{
   scale: 0.95;
   transition: .05s;
 }
-/* ID SELECTORS */

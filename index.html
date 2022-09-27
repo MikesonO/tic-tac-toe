@@ -22,7 +22,7 @@
   </header>
   <main>
     <!-- TITLE SCREEN -->
-    <div class="title-screen">
+    <div class="title-page">
       <div class="player-selection">
         <h1>Choose your hero!</h1>
         <div class="players">
@@ -58,7 +58,7 @@
               </ul>
             </div>
             <div class="player-name">
-              <input type="text" id="player1-name" max-length="12" placeholder="Player 1" />
+              <input type="text" id="player1-name" name="player1-name" max-length="12" placeholder="Player 1" />
             </div>
           </div>
           <!-- PLAYER 2 -->
@@ -93,14 +93,13 @@
             </ul>
           </div>
           <div class="player-name">
-            <input type="text" id="player2-name" max-length="12" placeholder="Player 2"/>
+            <input type="text" id="player2-name" name="player2-name" max-length="12" placeholder="Player 2"/>
           </div>
         </div>
       </div>
       <div class="start">
-        <button class="start-btn">Start</button>
+        <button id="start-btn">Start</button>
       </div>
-    </div>
     </div>
     </div>
     <!-- GAMEBOARD -->
