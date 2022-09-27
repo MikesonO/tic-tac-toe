@@ -57,10 +57,10 @@ const titlePage = (()=>{
   //Start Button
   const startBtn = document.querySelector("#start-btn")
   startBtn.addEventListener("click", ()=>{
-    if(playerOneName.textContent == ""){
+    if(playerOneName.textContent == "" || playerOneName.textContent.trim().length == 0){
       playerOneName.textContent = "Player 1";
      }
-    if(playerTwoName.textContent == ""){
+    if(playerTwoName.textContent == "" || playerTwoName.textContent.trim().length == 0){
       playerTwoName.textContent = "Player 2";
     }
     const titlePage = document.querySelector(".title-page");
