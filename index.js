@@ -31,11 +31,24 @@ const titlePage = (()=>{
     })
   })
 
+  const playerOneInput = document.querySelector("#p1-name");
+  playerOneInput.addEventListener("change", () => {
+      playerOneName.textContent += playerOneInput.value;
+  });
+
+  const playerTwoInput = document.querySelector("#p2-name");
+  playerTwoInput.addEventListener("change", () => {
+      playerTwoName.textContent += playerTwoInput.value;
+  });
+
+  const playerOneName = document.querySelector("#player1-name");
+  const playerTwoName = document.querySelector("#player2-name");
+
   //Start Button
   const startBtn = document.querySelector("#start-btn")
   startBtn.addEventListener("click", ()=>{
     const titlePage = document.querySelector(".title-page");
-    const gameBoard = document.querySelector(".gameboard");
+    const gameBoard = document.querySelector(".game-page");
     helperFunction.switchPage(titlePage, gameBoard);
   })
 
