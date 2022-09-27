@@ -38,8 +38,6 @@ const titlePage = (()=>{
     })
   })
 
-  
-
   //Player Name Input
   const playerOneInput = document.querySelector("#p1-name");
   playerOneInput.addEventListener("change", () => {
@@ -54,9 +52,17 @@ const titlePage = (()=>{
   const playerOneName = document.querySelector("#player1-name");
   const playerTwoName = document.querySelector("#player2-name");
 
+
+
   //Start Button
   const startBtn = document.querySelector("#start-btn")
   startBtn.addEventListener("click", ()=>{
+    if(playerOneName.textContent == ""){
+      playerOneName.textContent = "Player 1";
+     }
+    if(playerTwoName.textContent == ""){
+      playerTwoName.textContent = "Player 2";
+    }
     const titlePage = document.querySelector(".title-page");
     const gameBoard = document.querySelector(".game-page");
     helperFunction.switchPage(titlePage, gameBoard);
