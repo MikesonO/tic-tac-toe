@@ -189,6 +189,56 @@ header h1 {
   outline: 2.5px solid var(--color4);
 }
 
+
+.game-page{
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100%;
+}
+
+.game-container{
+  background-color: var(--color1);
+  width: 75vw;
+  height: 70%;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+.gameboard{
+  border: 10px solid var(--color2);
+  border-radius: 20px;
+}
+
+.player1-left,
+.player2-right{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.avatar p{
+  text-align: center;
+  color: var(--color3);
+}
+
+.player1-avatar,
+.player2-avatar{
+  border-radius: 50%;
+  border: 7.5px solid var(--color2);
+  background-color: var(--color3);
+}
+
+#player1-score,
+#player2-score{
+  color: var(--color4);
+}
+
+
 /* ID SELECTORS */
 #start-btn{
   font-family: 'Permanent Marker', cursive;
@@ -209,4 +259,15 @@ header h1 {
 #start-btn:active{
   scale: 0.95;
   transition: .05s;
+}
+
+#player1-name,
+#player2-name{
+  width: fit-content;
+  padding: .5rem 1rem;
+  text-align: center;
+  color: var(--color1);
+  background-color: var(--color2);
+  border-radius: 50px;
+
 }

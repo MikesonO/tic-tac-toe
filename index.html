@@ -58,53 +58,77 @@
               </ul>
             </div>
             <div class="player-name">
-              <input type="text" id="player1-name" name="player1-name" max-length="12" placeholder="Player 1" />
+              <input type="text" id="p1-name" name="p1-name" maxlength="12" placeholder="Player 1" />
             </div>
           </div>
           <!-- PLAYER 2 -->
           <div class="player2">
             <div class="player-top">
               <h2>Player 2</h2>
-          </div>
-          <div class="player-avatar" data-avatars>
-            <button class="avatar-select-btn prev" data-avatarSwitch-button="prev"><i
-                class="fa-solid fa-arrow-left"></i></button>
-            <button class="avatar-select-btn next" data-avatarSwitch-button="next"><i
-                class="fa-solid fa-arrow-right"></i></button>
-            <ul data-slides>
-              <li class="slide" data-active>
-                <img src="./images/hero2.png" alt="Hero #2">
-              </li>
-              <li class="slide">
-                <img src="./images/hero3.png" alt="Hero #3">
-              </li>
-              <li class="slide">
-                <img src="./images/hero4.png" alt="Hero #4">
-              </li>
-              <li class="slide">
-                <img src="./images/hero5.png" alt="Hero #5">
-              </li>
-              <li class="slide">
-                <img src="./images/hero6.png" alt="Hero #6">
-              </li>
-              <li class="slide">
-                <img src="./images/hero1.png" alt="Hero 1">
-              </li>
-            </ul>
-          </div>
-          <div class="player-name">
-            <input type="text" id="player2-name" name="player2-name" max-length="12" placeholder="Player 2"/>
+            </div>
+            <div class="player-avatar" data-avatars>
+              <button class="avatar-select-btn prev" data-avatarSwitch-button="prev"><i
+                  class="fa-solid fa-arrow-left"></i></button>
+              <button class="avatar-select-btn next" data-avatarSwitch-button="next"><i
+                  class="fa-solid fa-arrow-right"></i></button>
+              <ul data-slides>
+                <li class="slide" data-active>
+                  <img src="./images/hero2.png" alt="Hero #2">
+                </li>
+                <li class="slide">
+                  <img src="./images/hero3.png" alt="Hero #3">
+                </li>
+                <li class="slide">
+                  <img src="./images/hero4.png" alt="Hero #4">
+                </li>
+                <li class="slide">
+                  <img src="./images/hero5.png" alt="Hero #5">
+                </li>
+                <li class="slide">
+                  <img src="./images/hero6.png" alt="Hero #6">
+                </li>
+                <li class="slide">
+                  <img src="./images/hero1.png" alt="Hero 1">
+                </li>
+              </ul>
+            </div>
+            <div class="player-name">
+              <input type="text" id="p2-name" name="p2-name" maxlength="12" placeholder="Player 2" />
+            </div>
           </div>
         </div>
+        <div class="start">
+          <button id="start-btn">Start</button>
+        </div>
       </div>
-      <div class="start">
-        <button id="start-btn">Start</button>
-      </div>
-    </div>
     </div>
     <!-- GAMEBOARD -->
-    <div class="gameboard" id="gameboard">
+    <div class="game-page" id="game-page">
+      <h1>Round: 1</h1>
+      <div class="game-container">
 
+        <div class="player1-left">
+          <h2 id="player1-name">Player 1</h2>
+          <div class="avatar">
+          <img class="player1-avatar" src="./images/hero1.png" alt="Player 1 Avatar">
+          <p>Symbol: X</p>
+          </div>
+          <h2 id="player1-score">Score: 0</h2>
+        </div>
+        <div class="gameboard">
+
+        </div>
+        <div class="player2-right">
+          <h2 id="player2-name">Player 2</h2>
+          <div class="avatar">
+            <img class="player2-avatar" src="./images/hero2.png" alt="Player 2 Avatar">
+            <p>Symbol: O</p>
+          </div>
+          <h2 id="player2-score">Score: 0</h2>
+
+        </div>
+
+      </div>
     </div>
   </main>
   <footer>
