@@ -8,6 +8,7 @@
   --color4-hightlight: #F0545466;
   --player-height: 400px;
   --player-width: 300px;
+  --cell-size: 175px;
 }
 
 /* ELEMENT SELECTORS */
@@ -204,12 +205,58 @@ header h1 {
   width: 75vw;
   height: 70%;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .gameboard{
   border: 10px solid var(--color2);
   border-radius: 20px;
+  display: grid;
+  width:fit-content;
+  height: fit-content;
+  grid-template-columns: repeat(3, auto);
+}
+
+.cell{
+  width: var(--cell-size);
+  height: var(--cell-size);
+  background-color: var(--color3);
+  border: 1px solid var(--color1);
+}
+
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3){
+  border-top: none;
+}
+
+.cell:nth-child(3n+1){
+  border-left: none;
+}
+
+.cell:nth-child(3n+3){
+  border-right: none;
+}
+
+.cell:last-child,
+.cell:nth-child(8),
+.cell:nth-child(7){
+  border-bottom: none;
+}
+
+.cell:first-child{
+  border-radius: 7.5px 0 0 0;
+}
+
+.cell:nth-child(3){
+  border-radius: 0 7.5px 0 0;
+}
+.cell:last-child{
+  border-radius: 0 0 7.5px 0;
+}
+
+.cell:nth-child(7){
+  border-radius: 0 0 0 7.5px;
 }
 
 .player1-left,
