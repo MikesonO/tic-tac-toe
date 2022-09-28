@@ -69,3 +69,21 @@ const titlePage = (()=>{
   })
 
 })();
+
+
+const gamePage = (() => {
+  
+  // Player Factory Function
+  const Player = (marker) => {
+    return {
+      marker
+    };
+  }
+
+  const playerOne = Player("X");
+  const playerTwo = Player("O");
+
+ 
+
+
+})();
