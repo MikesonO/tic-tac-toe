@@ -9,6 +9,7 @@
   --player-height: 400px;
   --player-width: 300px;
   --cell-size: 150px;
+  --marker-size: calc(var(--cell-size)* 0.9);
 }
 
 /* ELEMENT SELECTORS */
@@ -222,6 +223,11 @@ header h1 {
   height: var(--cell-size);
   background-color: var(--color3);
   border: 1px solid var(--color1);
+  font-size: var(--marker-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color1);
 }
 
 .cell:first-child,
