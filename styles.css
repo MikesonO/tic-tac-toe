@@ -103,14 +103,14 @@ header h1 {
   position: relative;
 }
 
-.player-avatar ul{
+.player-avatar ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
 
 }
 
-.avatar-select-btn{
+.avatar-select-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -125,21 +125,22 @@ header h1 {
   transition: all 0.5s ease;
 }
 
-.avatar-select-btn.prev{
+.avatar-select-btn.prev {
   left: .5rem;
-  
+
 }
 
-.avatar-select-btn.next{
+.avatar-select-btn.next {
   right: .5rem;
 }
 
 .avatar-select-btn:hover,
-.avatar-select-btn:focus{
+.avatar-select-btn:focus {
   font-size: 2.25rem;
   background-color: var(--color4);
 }
-.avatar-select-btn:focus{
+
+.avatar-select-btn:focus {
   outline: 2.5px solid var(--color2);
   transition: 0s;
 }
@@ -169,7 +170,7 @@ header h1 {
   transition-delay: 0ms;
 }
 
-.player-name{
+.player-name {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -178,21 +179,21 @@ header h1 {
   gap: 1rem;
 }
 
-.player-name input{
-  font-size:1.25rem;
-  padding:0.3rem 0.7rem;
+.player-name input {
+  font-size: 1.25rem;
+  padding: 0.3rem 0.7rem;
   width: 150px;
   border-radius: 20px;
   background-color: var(--color1);
   border: none;
 }
 
-.player-name input:focus{
+.player-name input:focus {
   outline: 2.5px solid var(--color4);
 }
 
 
-.game-page{
+.game-page {
   display: none;
   justify-content: center;
   align-items: center;
@@ -202,7 +203,7 @@ header h1 {
   height: 100%;
 }
 
-.game-container{
+.game-container {
   background-color: var(--color1);
   width: 75vw;
   height: 100%;
@@ -210,16 +211,16 @@ header h1 {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-.gameboard{
+.gameboard {
   border: 10px solid var(--color2);
   border-radius: 20px;
   display: grid;
-  width:fit-content;
+  width: fit-content;
   height: fit-content;
   grid-template-columns: repeat(3, auto);
 }
 
-.cell{
+.cell {
   width: var(--cell-size);
   height: var(--cell-size);
   background-color: var(--color3);
@@ -233,47 +234,48 @@ header h1 {
 
 .cell:first-child,
 .cell:nth-child(2),
-.cell:nth-child(3){
+.cell:nth-child(3) {
   border-top: none;
 }
 
-.cell:nth-child(3n+1){
+.cell:nth-child(3n+1) {
   border-left: none;
 }
 
-.cell:nth-child(3n+3){
+.cell:nth-child(3n+3) {
   border-right: none;
 }
 
 .cell:last-child,
 .cell:nth-child(8),
-.cell:nth-child(7){
+.cell:nth-child(7) {
   border-bottom: none;
 }
 
-.cell:first-child{
+.cell:first-child {
   border-radius: 7.5px 0 0 0;
 }
 
-.cell:nth-child(3){
+.cell:nth-child(3) {
   border-radius: 0 7.5px 0 0;
 }
-.cell:last-child{
+
+.cell:last-child {
   border-radius: 0 0 7.5px 0;
 }
 
-.cell:nth-child(7){
+.cell:nth-child(7) {
   border-radius: 0 0 0 7.5px;
 }
 
 
-.cell.appear{
+.cell.appear {
   animation: markerAppear .5s 1;
   overflow: visible;
 }
 
 .player1-left,
-.player2-right{
+.player2-right {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -281,13 +283,13 @@ header h1 {
   gap: 3rem;
 }
 
-.avatar p{
+.avatar p {
   text-align: center;
   color: var(--color3);
 }
 
 .player1-avatar,
-.player2-avatar{
+.player2-avatar {
   border-radius: 50%;
   border: 7.5px solid var(--color2);
   background-color: var(--color3);
@@ -295,18 +297,46 @@ header h1 {
 }
 
 .player1-avatar.active,
-.player2-avatar.active{
+.player2-avatar.active {
   border: 7.5px solid var(--color4);
 }
 
-#player1-score,
-#player2-score{
-  color: var(--color4);
+.winner-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 300px;
+  height: 250px;
+  text-align: center;
+  border-radius: 20px;
+  color: var(--color1);
+  background-color: var(--color2);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.winner-modal.active{
+  animation: zoomIn 1s 1;
+}
+
+.winner-modal{
+  animation: zoomOut 1s 1;
+}
+
+.winner-avatar {
+  width: 100px;
 }
 
 
 /* ID SELECTORS */
-#start-btn{
+#start-btn {
   font-family: 'Permanent Marker', cursive;
   padding: .1rem 1.5rem .2rem 1.5rem;
   font-size: 2rem;
@@ -318,17 +348,30 @@ header h1 {
   transition: .5s;
 }
 
-#start-btn:hover{
+#winner-btn {
+  font-family: 'Permanent Marker', cursive;
+  border: none;
+  background-color: var(--color4);
+  color: var(--color1);
+  font-size: 1.25rem;
+  padding: .5rem;
+  border-radius: 20px;
+  transition: .5s;
+}
+
+#start-btn:hover,
+#winner-btn:hover {
   background-color: var(--color4-darker);
 }
 
-#start-btn:active{
+#start-btn:active,
+#winner-btn:active {
   scale: 0.95;
   transition: .05s;
 }
 
 #player1-name,
-#player2-name{
+#player2-name {
   width: fit-content;
   padding: .5rem 1rem;
   text-align: center;
@@ -340,18 +383,39 @@ header h1 {
 }
 
 #player1-name.active,
-#player2-name.active{
-  background-color:var(--color4);
+#player2-name.active {
+  background-color: var(--color4);
   animation: scaleIncrease 2s infinite;
-
 }
 
-@keyframes scaleIncrease{
-  0%   {scale:1}
-  50%  {scale:1.1}
+#player1-score,
+#player2-score {
+  color: var(--color4);
 }
 
-@keyframes markerAppear{
-  0%    { color: rgba(255,255,255,0); font-size: 300px;}
-  50%   { opacity: rgba(255,255,255,1); font-size: var(--marker-size); } 
+/* ANIMATIONS */
+@keyframes scaleIncrease {
+  0% { scale: 1}
+  50% {scale: 1.1 }
+}
+
+@keyframes zoomIn {
+  0% {scale: 0.1}
+  50% {scale: 1 }
+}
+
+@keyframes zoomOut {
+  0% {scale: 1}
+  50% {scale: 0.5}
+}
+
+@keyframes markerAppear {
+  0% {
+    color: rgba(255, 255, 255, 0);
+    font-size: 300px;}
+
+  50% {
+    opacity: rgba(255, 255, 255, 1);
+    font-size: var(--marker-size);
+  }
 }

@@ -5,7 +5,17 @@ const helperFunction = (() => {
     newPage.style.display = "flex";
   };
 
+  const displayModal = (modal) =>{
+    modal.style.display = "flex";
+  }
+
+  const removeModal = (modal) =>{
+    modal.style.display = "none";
+  }
+
   return {
+    displayModal,
+    removeModal,
     switchPage
   }
 
@@ -86,6 +96,8 @@ const gamePage = (() => {
 
   const playerOne = Player("X");
   const playerTwo = Player("O");
+  const player1Avatar = document.querySelector(".player1-avatar");
+  const player2Avatar = document.querySelector(".player2-avatar");
   let playerOneTurn = true;
   const cellElements = document.querySelectorAll("[data-cell]");
   const winningConditions = [
@@ -102,6 +114,10 @@ const gamePage = (() => {
   const player2Score = document.querySelector("#player2-score");
   let player1CurrentScore = 0;
   let player2CurrentScore = 0;
+  const winModal = document.querySelector(".winner-modal");
+  const winAvatar = document.querySelector(".winner-avatar");
+  const winText = document.querySelector("[data-winner-text]");
+
 
   cellElements.forEach(cell => {
     cell.addEventListener("click", selectedCell, {
@@ -117,6 +133,7 @@ const gamePage = (() => {
       if(checkForWin(playerOneTurn)){
         player1CurrentScore++;
         player1Score.textContent = `Score: ${player1CurrentScore}`;
+        endGame(false);
         console.log("Player1 Wins!");
 
       }
@@ -127,6 +144,7 @@ const gamePage = (() => {
       if(checkForWin(playerOneTurn)){
         player2CurrentScore++;
         player2Score.textContent = `Score: ${player2CurrentScore}`;
+        endGame(false);
         console.log("Player2 Wins!");
 
       }
@@ -168,14 +186,11 @@ const gamePage = (() => {
   //Switches the turn
   function switchTurn(){
     playerOneTurn = !playerOneTurn;
-    console.log(playerOneTurn);
   }
 
 
   //Changes Avatar and Name color based on turn
   function changeColor(playerOneTurn){
-  const player1Avatar = document.querySelector(".player1-avatar");
-  const player2Avatar = document.querySelector(".player2-avatar");
   const player1Name = titlePage.playerOneName;
   const player2Name = titlePage.playerTwoName;
   
@@ -194,6 +209,23 @@ const gamePage = (() => {
   }
 
   changeColor(playerOneTurn);
+
+  function endGame (draw){
+    if (draw){
+
+    } else{
+      if(playerOneTurn == true){
+      winAvatar.setAttribute("src",player1Avatar.getAttribute("src"))
+      winText.textContent="Player 1 wins!"
+      } else if (playerOneTurn == false){
+        winAvatar.setAttribute("src",player2Avatar.getAttribute("src"))
+        winText.textContent="Player 2 wins!"
+      }
+      helperFunction.displayModal(winModal);
+      winModal.classList.add("active");
+    }
+
+  }
 
 
 
