@@ -90,6 +90,16 @@ const gamePage = (() => {
 
 
   const cellElements = document.querySelectorAll("[data-cell]");
+  const winningConditions = [
+    [0,1,2],
+    [3,4,5],
+    [6,7,8],
+    [0,3,6],
+    [1,4,7],
+    [2,5,8],
+    [0,4,8],
+    [2,4,6]
+  ]
 
   cellElements.forEach(cell => {
     cell.addEventListener("click", selectedCell, {
@@ -102,10 +112,18 @@ const gamePage = (() => {
     const cell = event.target
     if (playerOneTurn == true) {
       placeMarker(cell, playerOne);
+      if(checkForWin(playerOneTurn)){
+        console.log("Player1 Wins!");
+
+      }
       switchTurn();
       changeColor(playerOneTurn);
     } else if (playerOneTurn == false) {
       placeMarker(cell, playerTwo);
+      if(checkForWin(playerOneTurn)){
+        console.log("Player2 Wins!");
+
+      }
       switchTurn();
       changeColor(playerOneTurn);
 
@@ -122,6 +140,23 @@ const gamePage = (() => {
       cell.textContent = "O";
       cell.classList.add("appear");
     }
+  }
+
+  //Checks to see which player wins
+  function checkForWin(playerOneTurn){
+    if (playerOneTurn == true){
+    return winningConditions.some(condition =>{
+      return condition.every(index =>{
+        return cellElements[index].textContent == "X";
+      })
+    })
+  } else if (playerOneTurn == false){
+    return winningConditions.some(condition =>{
+      return condition.every(index =>{
+        return cellElements[index].textContent == "O";
+      })
+    })
+  }
   }
 
   //Switches the turn
