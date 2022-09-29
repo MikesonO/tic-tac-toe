@@ -3,12 +3,13 @@
   --color1: #E8E8E8;
   --color2: #222831;
   --color3: #30475E;
+  --color3-darker: #213243;
   --color4: #F05454;
   --color4-darker: #C13838;
   --color4-hightlight: #F0545466;
   --player-height: 400px;
   --player-width: 300px;
-  --cell-size: 150px;
+  --cell-size: 140px;
   --marker-size: calc(var(--cell-size)* 0.9);
 }
 
@@ -39,11 +40,32 @@ main {
 
 footer {
   background-color: var(--color2);
+  width: 100%;
   padding: 1rem;
+  text-align: center;
+}
+
+footer a{
+  color: var(--color1);
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin: 0 auto;
+  gap: .5rem;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+footer a:hover {
+  scale: 1.1;
 }
 
 header h1 {
   font-size: 3.5rem;
+}
+
+button {
+  font-family: 'Permanent Marker', cursive;
 }
 
 
@@ -198,7 +220,6 @@ header h1 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-top: 1rem;
   gap: 1rem;
   height: 100%;
 }
@@ -206,9 +227,10 @@ header h1 {
 .game-container {
   background-color: var(--color1);
   width: 75vw;
-  height: 100%;
+  height: fit-content;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  position: relative;
 }
 
 .gameboard {
@@ -230,6 +252,12 @@ header h1 {
   justify-content: center;
   align-items: center;
   color: var(--color1);
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.cell:hover {
+  background-color: var(--color3-darker);
 }
 
 .cell:first-child,
@@ -322,7 +350,7 @@ header h1 {
   padding: 2rem;
 }
 
-.draw-modal{
+.draw-modal {
   position: fixed;
   top: 0;
   right: 0;
@@ -342,12 +370,14 @@ header h1 {
   gap: 4rem;
   padding: 2rem;
 }
+
 .draw-modal.active,
-.winner-modal.active{
+.winner-modal.active {
   animation: zoomIn 1s 1;
 }
+
 .draw-modal,
-.winner-modal{
+.winner-modal {
   animation: zoomOut 1s 1;
 }
 
@@ -358,7 +388,6 @@ header h1 {
 
 /* ID SELECTORS */
 #start-btn {
-  font-family: 'Permanent Marker', cursive;
   padding: .1rem 1.5rem .2rem 1.5rem;
   font-size: 2rem;
   border: none;
@@ -371,7 +400,6 @@ header h1 {
 
 #winner-btn,
 #draw-btn {
-  font-family: 'Permanent Marker', cursive;
   border: none;
   background-color: var(--color4);
   color: var(--color1);
@@ -417,28 +445,84 @@ header h1 {
   color: var(--color4);
 }
 
+#home-btn,
+#reset-btn {
+  border: none;
+  color: var(--color1);
+  padding: .5rem .75rem;
+  border-radius: 100%;
+  background-color: var(--color2);
+  position: absolute;
+  bottom: -3.5rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+#home-btn{
+  left: 45%;
+  transform: translate(-45%);
+}
+
+#reset-btn{
+  left: 55%;
+  transform: translate(-55%);
+}
+
+
+#home-btn:hover,
+#reset-btn:hover{
+  scale:1.1;
+}
+
+#home-btn:active,
+#reset-btn:active{
+  outline: 1px solid var(--color1);
+  scale: 1;
+  transition: 0.025s;
+}
+
 /* ANIMATIONS */
 @keyframes scaleIncrease {
-  0% { scale: 1}
-  50% {scale: 1.1 }
+  0% {
+    scale: 1
+  }
+
+  50% {
+    scale: 1.1
+  }
 }
 
 @keyframes zoomIn {
-  0% {scale: 0.1}
-  50% {scale: 1 }
+  0% {
+    scale: 0.1
+  }
+
+  50% {
+    scale: 1
+  }
 }
 
 @keyframes zoomOut {
-  0% {scale: 1}
-  20% {scale: 1.1}
-  100% {scale:0}
+  0% {
+    scale: 1
+  }
+
+  20% {
+    scale: 1.1
+  }
+
+  100% {
+    scale: 0
+  }
 
 }
 
 @keyframes markerAppear {
   0% {
     color: rgba(255, 255, 255, 0);
-    font-size: 300px;}
+    font-size: 300px;
+  }
 
   50% {
     opacity: rgba(255, 255, 255, 1);

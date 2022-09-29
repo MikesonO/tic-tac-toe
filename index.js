@@ -128,6 +128,8 @@ const gamePage = (() => {
   const drawModal = document.querySelector(".draw-modal");
   const winContinueBtn = document.getElementById("winner-btn");
   const drawContinueBtn = document.getElementById("draw-btn");
+  const homeBtn = document.getElementById("home-btn");
+  const resetBtn = document.getElementById("reset-btn");
 
   //Starts the Game
   function startGame(){
@@ -283,6 +285,24 @@ startGame();
       cell.removeEventListener("click",selectedCell);
     })
   }
+
+  //Redirects to Homepage
+  homeBtn.addEventListener("click",()=>{
+    location.reload();
+  })
+
+  //Resets all scores
+  resetBtn.addEventListener("click",()=>{
+    currentRound = 0;
+    player1CurrentScore = 0;
+    player2CurrentScore = 0;
+    roundText.textContent = `Round: ${currentRound}`;
+    player1Score.textContent = `Score: ${player1CurrentScore}`;
+    player2Score.textContent = `Score: ${player2CurrentScore}`;
+    playerOneTurn=true;
+    changeColor(playerOneTurn);
+    startGame();
+  })
 
 
 
