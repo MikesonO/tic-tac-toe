@@ -87,8 +87,6 @@ const gamePage = (() => {
   const playerOne = Player("X");
   const playerTwo = Player("O");
   let playerOneTurn = true;
-
-
   const cellElements = document.querySelectorAll("[data-cell]");
   const winningConditions = [
     [0,1,2],
@@ -99,7 +97,11 @@ const gamePage = (() => {
     [2,5,8],
     [0,4,8],
     [2,4,6]
-  ]
+  ];
+  const player1Score = document.querySelector("#player1-score");
+  const player2Score = document.querySelector("#player2-score");
+  let player1CurrentScore = 0;
+  let player2CurrentScore = 0;
 
   cellElements.forEach(cell => {
     cell.addEventListener("click", selectedCell, {
@@ -113,6 +115,8 @@ const gamePage = (() => {
     if (playerOneTurn == true) {
       placeMarker(cell, playerOne);
       if(checkForWin(playerOneTurn)){
+        player1CurrentScore++;
+        player1Score.textContent = `Score: ${player1CurrentScore}`;
         console.log("Player1 Wins!");
 
       }
@@ -121,6 +125,8 @@ const gamePage = (() => {
     } else if (playerOneTurn == false) {
       placeMarker(cell, playerTwo);
       if(checkForWin(playerOneTurn)){
+        player2CurrentScore++;
+        player2Score.textContent = `Score: ${player2CurrentScore}`;
         console.log("Player2 Wins!");
 
       }
@@ -147,7 +153,7 @@ const gamePage = (() => {
     if (playerOneTurn == true){
     return winningConditions.some(condition =>{
       return condition.every(index =>{
-        return cellElements[index].textContent == "X";
+        return cellElements[index].textContent == "X"
       })
     })
   } else if (playerOneTurn == false){
