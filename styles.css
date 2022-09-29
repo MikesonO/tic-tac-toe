@@ -266,6 +266,12 @@ header h1 {
   border-radius: 0 0 0 7.5px;
 }
 
+
+.cell.appear{
+  animation: markerAppear .5s 1;
+  overflow: visible;
+}
+
 .player1-left,
 .player2-right{
   display: flex;
@@ -343,4 +349,9 @@ header h1 {
 @keyframes scaleIncrease{
   0%   {scale:1}
   50%  {scale:1.1}
+}
+
+@keyframes markerAppear{
+  0%    { color: rgba(255,255,255,0); font-size: 300px;}
+  50%   { opacity: rgba(255,255,255,1); font-size: var(--marker-size); } 
 }

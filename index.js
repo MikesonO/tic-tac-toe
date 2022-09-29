@@ -116,9 +116,11 @@ const gamePage = (() => {
   function placeMarker(cell, player){
     if (player == playerOne){
     cell.textContent = "X";
+    cell.classList.add("appear");
 
     } else if (player == playerTwo){
       cell.textContent = "O";
+      cell.classList.add("appear");
     }
   }
 
