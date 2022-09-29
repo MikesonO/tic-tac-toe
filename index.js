@@ -10,10 +10,15 @@ const helperFunction = (() => {
   }
 
   const removeModal = (modal) =>{
-    modal.style.display = "none";
+    window.setTimeout(()=>modal.style.display = "none", 1000);
+  }
+
+  const removeActiveClass = (element) =>{
+    element.classList.remove("active");
   }
 
   return {
+    removeActiveClass,
     displayModal,
     removeModal,
     switchPage
@@ -94,6 +99,7 @@ const gamePage = (() => {
     };
   }
 
+  //Private Variables
   const playerOne = Player("X");
   const playerTwo = Player("O");
   const player1Avatar = document.querySelector(".player1-avatar");
@@ -114,17 +120,41 @@ const gamePage = (() => {
   const player2Score = document.querySelector("#player2-score");
   let player1CurrentScore = 0;
   let player2CurrentScore = 0;
+  const roundText = document.getElementById("round");
+  let currentRound = 0;
   const winModal = document.querySelector(".winner-modal");
   const winAvatar = document.querySelector(".winner-avatar");
   const winText = document.querySelector("[data-winner-text]");
   const drawModal = document.querySelector(".draw-modal");
+  const winContinueBtn = document.getElementById("winner-btn");
+  const drawContinueBtn = document.getElementById("draw-btn");
 
-
+  //Starts the Game
+  function startGame(){
   cellElements.forEach(cell => {
+    cell.textContent = "";
     cell.addEventListener("click", selectedCell, {
       once: true
     })
   })
+  helperFunction.removeActiveClass(winModal);
+  helperFunction.removeModal(winModal);
+  helperFunction.removeModal(drawModal);
+  currentRound++;
+  roundText.textContent = `Round: ${currentRound}`;
+}
+
+startGame();
+
+  winContinueBtn.addEventListener("click", ()=>{
+    if(playerOneTurn == true){
+      switchTurn(playerOneTurn);
+    } else if(playerOneTurn == false){
+      switchTurn(playerOneTurn);
+    }
+    changeColor(playerOneTurn);
+    startGame();
+  });
 
   //Gets the selected cell
   function selectedCell(event) {

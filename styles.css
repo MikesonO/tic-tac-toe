@@ -430,7 +430,9 @@ header h1 {
 
 @keyframes zoomOut {
   0% {scale: 1}
-  50% {scale: 0.5}
+  20% {scale: 1.1}
+  100% {scale:0}
+
 }
 
 @keyframes markerAppear {
