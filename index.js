@@ -67,6 +67,11 @@ const titlePage = (() => {
     helperFunction.switchPage(titlePage, gameBoard);
   })
 
+  return{
+    playerOneName,
+    playerTwoName
+  }
+
 })();
 
 
@@ -98,11 +103,11 @@ const gamePage = (() => {
     if (playerOneTurn == true) {
       placeMarker(cell, playerOne);
       switchTurn();
-      changeBorderColor(playerOneTurn);
+      changeColor(playerOneTurn);
     } else if (playerOneTurn == false) {
       placeMarker(cell, playerTwo);
       switchTurn();
-      changeBorderColor(playerOneTurn);
+      changeColor(playerOneTurn);
 
     }
   }
@@ -124,20 +129,28 @@ const gamePage = (() => {
   }
 
 
-  function changeBorderColor(playerOneTurn){
+  //Changes Avatar and Name color based on turn
+  function changeColor(playerOneTurn){
   const player1Avatar = document.querySelector(".player1-avatar");
   const player2Avatar = document.querySelector(".player2-avatar");
+  const player1Name = titlePage.playerOneName;
+  const player2Name = titlePage.playerTwoName;
+  
     if (playerOneTurn == true){
+      player1Name.classList.add("active");
       player1Avatar.classList.add("active");
       player2Avatar.classList.remove("active");
+      player2Name.classList.remove("active");
     }
     if (playerOneTurn == false){
+      player2Name.classList.add("active");
       player2Avatar.classList.add("active");
+      player1Name.classList.remove("active");
       player1Avatar.classList.remove("active");
     }
   }
 
-  changeBorderColor(playerOneTurn);
+  changeColor(playerOneTurn);
 
 
 

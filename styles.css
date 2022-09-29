@@ -197,7 +197,8 @@ header h1 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 2rem;
+  padding-top: 1rem;
+  gap: 1rem;
   height: 100%;
 }
 
@@ -290,7 +291,6 @@ header h1 {
 .player1-avatar.active,
 .player2-avatar.active{
   border: 7.5px solid var(--color4);
-  animation: scaleIncrease 2.5s infinite;
 }
 
 #player1-score,
@@ -329,10 +329,18 @@ header h1 {
   color: var(--color1);
   background-color: var(--color2);
   border-radius: 50px;
+  transition: 0.25s;
+
+}
+
+#player1-name.active,
+#player2-name.active{
+  background-color:var(--color4);
+  animation: scaleIncrease 2s infinite;
 
 }
 
 @keyframes scaleIncrease{
   0%   {scale:1}
-  50%  {scale:1.05}
+  50%  {scale:1.1}
 }
