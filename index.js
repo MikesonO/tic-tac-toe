@@ -267,7 +267,10 @@ startGame();
       helperFunction.displayModal(winModal);
       winModal.classList.add("active");
     }
-
+     //Prevents Cell from being clicked
+     cellElements.forEach(cell =>{
+      cell.removeEventListener("click",selectedCell);
+    })
   }
 
 
