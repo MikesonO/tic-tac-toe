@@ -139,6 +139,7 @@ const gamePage = (() => {
   })
   helperFunction.removeActiveClass(winModal);
   helperFunction.removeModal(winModal);
+  helperFunction.removeActiveClass(drawModal);
   helperFunction.removeModal(drawModal);
   currentRound++;
   roundText.textContent = `Round: ${currentRound}`;
@@ -154,6 +155,16 @@ startGame();
     }
     changeColor(playerOneTurn);
     startGame();
+  });
+
+  drawContinueBtn.addEventListener("click", ()=>{
+      if(playerOneTurn == true){
+        switchTurn(playerOneTurn);
+      } else if(playerOneTurn == false){
+        switchTurn(playerOneTurn);
+      }
+      changeColor(playerOneTurn);
+      startGame();
   });
 
   //Gets the selected cell
