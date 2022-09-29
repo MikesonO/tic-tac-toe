@@ -117,6 +117,7 @@ const gamePage = (() => {
   const winModal = document.querySelector(".winner-modal");
   const winAvatar = document.querySelector(".winner-avatar");
   const winText = document.querySelector("[data-winner-text]");
+  const drawModal = document.querySelector(".draw-modal");
 
 
   cellElements.forEach(cell => {
@@ -135,10 +136,12 @@ const gamePage = (() => {
         player1Score.textContent = `Score: ${player1CurrentScore}`;
         endGame(false);
         console.log("Player1 Wins!");
-
-      }
+      } else if(checkForDraw()){
+        endGame(true);
+      } else{
       switchTurn();
       changeColor(playerOneTurn);
+      }
     } else if (playerOneTurn == false) {
       placeMarker(cell, playerTwo);
       if(checkForWin(playerOneTurn)){
@@ -146,11 +149,12 @@ const gamePage = (() => {
         player2Score.textContent = `Score: ${player2CurrentScore}`;
         endGame(false);
         console.log("Player2 Wins!");
-
-      }
+      } else if(checkForDraw()){
+          endGame(true);
+      } else{
       switchTurn();
       changeColor(playerOneTurn);
-
+    }
     }
   }
 
@@ -183,6 +187,13 @@ const gamePage = (() => {
   }
   }
 
+  //Checks to see if each Cell has a Marker
+  function checkForDraw(){
+    return [...cellElements].every(cell => {
+      return cell.textContent == "X" || cell.textContent == "O";
+    })
+  }
+
   //Switches the turn
   function switchTurn(){
     playerOneTurn = !playerOneTurn;
@@ -212,7 +223,9 @@ const gamePage = (() => {
 
   function endGame (draw){
     if (draw){
-
+      console.log("draw!");
+      helperFunction.displayModal(drawModal);
+      drawModal.classList.add("active");
     } else{
       if(playerOneTurn == true){
       winAvatar.setAttribute("src",player1Avatar.getAttribute("src"))

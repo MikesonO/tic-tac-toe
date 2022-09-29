@@ -322,10 +322,31 @@ header h1 {
   padding: 2rem;
 }
 
+.draw-modal{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 300px;
+  height: 250px;
+  text-align: center;
+  border-radius: 20px;
+  color: var(--color1);
+  background-color: var(--color2);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 2rem;
+}
+.draw-modal.active,
 .winner-modal.active{
   animation: zoomIn 1s 1;
 }
-
+.draw-modal,
 .winner-modal{
   animation: zoomOut 1s 1;
 }
@@ -348,7 +369,8 @@ header h1 {
   transition: .5s;
 }
 
-#winner-btn {
+#winner-btn,
+#draw-btn {
   font-family: 'Permanent Marker', cursive;
   border: none;
   background-color: var(--color4);
@@ -360,12 +382,14 @@ header h1 {
 }
 
 #start-btn:hover,
-#winner-btn:hover {
+#winner-btn:hover,
+#draw-btn:hover {
   background-color: var(--color4-darker);
 }
 
 #start-btn:active,
-#winner-btn:active {
+#winner-btn:active,
+#draw-btn:active {
   scale: 0.95;
   transition: .05s;
 }
