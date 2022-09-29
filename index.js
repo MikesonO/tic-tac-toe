@@ -135,6 +135,7 @@ const gamePage = (() => {
   function startGame(){
   cellElements.forEach(cell => {
     cell.textContent = "";
+    cell.classList.remove("appear");
     cell.addEventListener("click", selectedCell, {
       once: true
     })
