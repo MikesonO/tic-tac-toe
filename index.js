@@ -98,9 +98,12 @@ const gamePage = (() => {
     if (playerOneTurn == true) {
       placeMarker(cell, playerOne);
       switchTurn();
+      changeBorderColor(playerOneTurn);
     } else if (playerOneTurn == false) {
       placeMarker(cell, playerTwo);
       switchTurn();
+      changeBorderColor(playerOneTurn);
+
     }
   }
 
@@ -108,6 +111,7 @@ const gamePage = (() => {
   function placeMarker(cell, player){
     if (player == playerOne){
     cell.textContent = "X";
+
     } else if (player == playerTwo){
       cell.textContent = "O";
     }
@@ -118,6 +122,22 @@ const gamePage = (() => {
     playerOneTurn = !playerOneTurn;
     console.log(playerOneTurn);
   }
+
+
+  function changeBorderColor(playerOneTurn){
+  const player1Avatar = document.querySelector(".player1-avatar");
+  const player2Avatar = document.querySelector(".player2-avatar");
+    if (playerOneTurn == true){
+      player1Avatar.classList.add("active");
+      player2Avatar.classList.remove("active");
+    }
+    if (playerOneTurn == false){
+      player2Avatar.classList.add("active");
+      player1Avatar.classList.remove("active");
+    }
+  }
+
+  changeBorderColor(playerOneTurn);
 
 
 

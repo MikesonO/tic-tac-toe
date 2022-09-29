@@ -204,7 +204,7 @@ header h1 {
 .game-container{
   background-color: var(--color1);
   width: 75vw;
-  height: 70%;
+  height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
@@ -284,6 +284,13 @@ header h1 {
   border-radius: 50%;
   border: 7.5px solid var(--color2);
   background-color: var(--color3);
+  transition: 0.25s;
+}
+
+.player1-avatar.active,
+.player2-avatar.active{
+  border: 7.5px solid var(--color4);
+  animation: scaleIncrease 2.5s infinite;
 }
 
 #player1-score,
@@ -323,4 +330,9 @@ header h1 {
   background-color: var(--color2);
   border-radius: 50px;
 
+}
+
+@keyframes scaleIncrease{
+  0%   {scale:1}
+  50%  {scale:1.05}
 }
