@@ -104,6 +104,8 @@ const gamePage = (() => {
   const playerTwo = Player("O");
   const player1Avatar = document.querySelector(".player1-avatar");
   const player2Avatar = document.querySelector(".player2-avatar");
+  const player1Name = titlePage.playerOneName;
+  const player2Name = titlePage.playerTwoName;
   let playerOneTurn = true;
   const cellElements = document.querySelectorAll("[data-cell]");
   const winningConditions = [
@@ -179,7 +181,6 @@ startGame();
         player1CurrentScore++;
         player1Score.textContent = `Score: ${player1CurrentScore}`;
         endGame(false);
-        console.log("Player1 Wins!");
       } else if(checkForDraw()){
         endGame(true);
       } else{
@@ -192,7 +193,6 @@ startGame();
         player2CurrentScore++;
         player2Score.textContent = `Score: ${player2CurrentScore}`;
         endGame(false);
-        console.log("Player2 Wins!");
       } else if(checkForDraw()){
           endGame(true);
       } else{
@@ -246,8 +246,6 @@ startGame();
 
   //Changes Avatar and Name color based on turn
   function changeColor(playerOneTurn){
-  const player1Name = titlePage.playerOneName;
-  const player2Name = titlePage.playerTwoName;
   
     if (playerOneTurn == true){
       player1Name.classList.add("active");
@@ -272,11 +270,11 @@ startGame();
       drawModal.classList.add("active");
     } else{
       if(playerOneTurn == true){
-      winAvatar.setAttribute("src",player1Avatar.getAttribute("src"))
-      winText.textContent="Player 1 wins!"
+      winAvatar.setAttribute("src",player1Avatar.getAttribute("src"));
+      winText.textContent=`${player1Name.textContent} wins!`;
       } else if (playerOneTurn == false){
-        winAvatar.setAttribute("src",player2Avatar.getAttribute("src"))
-        winText.textContent="Player 2 wins!"
+        winAvatar.setAttribute("src",player2Avatar.getAttribute("src"));
+        winText.textContent=`${player2Name.textContent} wins!`;
       }
       helperFunction.displayModal(winModal);
       winModal.classList.add("active");
