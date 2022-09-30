@@ -409,6 +409,7 @@ button {
   padding: .5rem;
   border-radius: 20px;
   transition: .5s;
+  cursor: pointer;
 }
 
 #start-btn:hover,
