@@ -592,7 +592,7 @@ button {
   .avatar-select-btn.next,
   .avatar-select-btn.prev {
     top: auto;
-    bottom: 0rem;
+    bottom: -2rem;
   }
 
   .game-container {
@@ -629,24 +629,24 @@ button {
   }
 
   #start-btn {
-    bottom: 80%;
+    bottom: 90%;
     left: 50%;
-    -webkit-transform: translate(-50%, 78%);
-    transform: translateX(-50%, 80%)
+    -webkit-transform: translate(-50%, 90%);
+    transform: translateX(-50%, 90%)
   }
 
 
 
   #reset-btn {
-    font-size: 1rem;
+    font-size: .9rem;
     bottom: 0;
-    left: -225px;
+    left: -220px;
   }
 
   #home-btn {
-    font-size: 1rem;
+    font-size: .9rem;
     bottom: 0;
-    right: -225px;
+    right: -220px;
   }
 
 }
@@ -664,6 +664,7 @@ button {
     border: none;
     box-shadow: none;
     height: 300px;
+    gap: 2rem;
 
   }
 
@@ -684,7 +685,7 @@ button {
   }
 
   .players {
-    gap: 1rem;
+    gap: 2rem;
   }
 
   .avatar-select-btn {
