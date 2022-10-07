@@ -638,13 +638,15 @@ button {
 
 
   #reset-btn {
+    font-size: 1rem;
     bottom: 0;
-    left: -250px;
+    left: -225px;
   }
 
   #home-btn {
+    font-size: 1rem;
     bottom: 0;
-    right: -250px;
+    right: -225px;
   }
 
 }
